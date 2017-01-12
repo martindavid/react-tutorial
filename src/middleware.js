@@ -12,7 +12,7 @@ const promiseMiddleware = store => next => action => {
             }
         );
 
-        return
+        return;
     }
 
     next(action);
