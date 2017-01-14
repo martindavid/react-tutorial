@@ -26,6 +26,7 @@ const ArticlePreview = props => {
                     </button>
                 </div>
             </div>
+            
             <a to={`article/${article.slug}`} className="preview-link">
                 <h1>{article.title}</h1>
                 <p>{article.description}</p>
