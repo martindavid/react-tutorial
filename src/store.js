@@ -1,20 +1,18 @@
-import { applyMiddleware, createStore } from 'redux';
+import { applyMiddleware, createStore, combineReducers } from 'redux';
 import { promiseMiddleware } from './middleware';
 
-const defaultState = {
-  appName: 'conduit',
-  articles: null
-};
+import auth from './reducers/auth';
+import home from './reducers/home';
+import common from './reducers/common';
 
-const reducer = function(state = defaultState, action) {
-  switch(action.type) {
-    case 'HOME_PAGE_LOADED':
-      return { ...state, articles: action.payload.articles };
-    default:
-      return state;
-  }
-};
+const reducer = combineReducers({
+  auth,
+  common,
+  home
+});
 
-const store = createStore(reducer, applyMiddleware(promiseMiddleware));
+const middleware = applyMiddleware(promiseMiddleware);
+
+const store = createStore(reducer, middleware);
 
 export default store;

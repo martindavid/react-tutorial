@@ -4,7 +4,7 @@ import Home from './home/Home';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
-  appName: state.appName
+  appName: state.common.appName
 });
 
 class App extends React.Component {
