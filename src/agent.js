@@ -7,6 +7,8 @@ const API_ROOT = 'https://conduit.productionready.io/api';
 
 const responseBody = res => res.body;
 
+let token = null;
+
 const requests = {
     get: url =>
         superagent.get(`${API_ROOT}${url}`).then(responseBody),
@@ -20,11 +22,14 @@ const Articles = {
 };
 
 const Auth = {
+    current: () =>
+        requests.get('/user'),
     login: (email, password) =>
         requests.post('/users/login', { user: { email, password } })
 };
 
 export default {
     Articles,
-    Auth
+    Auth,
+    setToken: _token => { token = _token; }
 }
