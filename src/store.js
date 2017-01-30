@@ -1,5 +1,6 @@
 import { applyMiddleware, createStore, combineReducers } from 'redux';
-import { promiseMiddleware } from './middleware';
+import { promiseMiddleware, localStorageMiddleware } from './middleware';
+//import createLogger from 'redux-logger';
 
 import auth from './reducers/auth';
 import home from './reducers/home';
@@ -11,8 +12,10 @@ const reducer = combineReducers({
   home
 });
 
-const middleware = applyMiddleware(promiseMiddleware);
+const getMiddleware = () => {
+    return applyMiddleware(promiseMiddleware, localStorageMiddleware);
+};
 
-const store = createStore(reducer, middleware);
+const store = createStore(reducer, getMiddleware());
 
 export default store;
