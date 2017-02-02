@@ -4,8 +4,6 @@ import agent from '../../agent';
 import MainView from './MainView'
 import { connect } from 'react-redux';
 
-const Promise = global.Promise;
-
 const mapStateToProps = state => ({
         appName: state.common.appName
 });

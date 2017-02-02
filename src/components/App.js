@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './Header';
-import Home from './home/Home';
 import agent from '../agent'
 import { connect } from 'react-redux';
 
