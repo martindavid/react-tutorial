@@ -6,12 +6,14 @@ import auth from './reducers/auth';
 import home from './reducers/home';
 import common from './reducers/common';
 import settings from './reducers/settings';
+import article from './reducers/article';
 
 const reducer = combineReducers({
   auth,
   common,
   home,
-  settings
+  settings,
+  article
 });
 
 const getMiddleware = () => {

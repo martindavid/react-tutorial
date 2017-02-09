@@ -30,6 +30,11 @@ export default (state = defaultState, action) => {
           token: action.error ? null : action.payload.user.token,
           currentUser: action.error ? null : action.payload.user
         }
+      case 'DELETE_ARTICLE':
+        return {
+          ...state,
+          redirectTo: '/'
+        }
     }
 
     return state;
