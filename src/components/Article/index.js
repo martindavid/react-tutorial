@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import marked from 'marked';
 
 import ArticleMeta from './ArticleMeta';
-// import CommentContainer from './CommentContainer'
+import CommentContainer from './CommentContainer'
 
 const mapStateToProps = state => ({
     ...state.article,
@@ -78,11 +78,11 @@ class Article extends React.Component {
                     <div className="article-actions"></div>
 
                     <div className="row">
-                        {/*<CommentContainer
+                        <CommentContainer
                             comments={this.props.comments || []}
                             errors={this.props.commmentErrors}
                             slug={this.props.params.id}
-                            currentUser={this.props.currentUser} />*/}
+                            currentUser={this.props.currentUser} />
                     </div>
                 </div>
             </div>

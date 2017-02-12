@@ -36,6 +36,10 @@ const Articles = {
 };
 
 const Comments = {
+    create: (slug, comments) =>
+        requests.post(`/articles/${slug}/comments`, {comments}),
+    delete: (slug, commentId) =>
+        requests.del(`/articles/${slug}/comemnts/${commentId}`),
     forArticle: slug =>
         requests.get(`/articles/${slug}/comments`)
 }
