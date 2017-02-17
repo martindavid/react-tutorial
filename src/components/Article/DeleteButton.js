@@ -1,6 +1,6 @@
 import React from 'react';
 import agent from '../../agent';
-import { connet } from 'react-redux';
+import { connect } from 'react-redux';
 
 const mapDispatchToProps = dispatch => ({
     onClick: (payload, commentId) =>
@@ -20,4 +20,7 @@ const DeleteButton = props => {
             </span>
         );
     }
-}
+    return null;
+};
+
+export default connect(() => ({}), mapDispatchToProps)(DeleteButton);

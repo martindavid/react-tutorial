@@ -7,13 +7,17 @@ import home from './reducers/home';
 import common from './reducers/common';
 import settings from './reducers/settings';
 import article from './reducers/article';
+import articleList from './reducers/articleList';
+import profile from './reducers/profile';
 
 const reducer = combineReducers({
   auth,
   common,
   home,
   settings,
-  article
+  article,
+  articleList,
+  profile
 });
 
 const getMiddleware = () => {

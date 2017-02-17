@@ -23,7 +23,7 @@ export default (state = {}, action) => {
                 ...state,
                 comments: state.comments.filter(comment => comment.id !== commentId)
             };
+        default:
+          return state;
     }
-    
-    return state;
 }
